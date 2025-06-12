@@ -16,9 +16,19 @@ function TimezoneConverterContent() {
   } = useTimezone()
 
   return (
-    <main className="min-h-screen bg-gray-50 p-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
+      {/* ヘッダー */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-6xl mx-auto px-4 py-6">
+          <h1 className="text-2xl font-bold text-gray-900">タイムゾーン変換</h1>
+          <p className="text-gray-600 mt-1">JST、UTC、PDT間での時刻変換</p>
+        </div>
+      </header>
+
+      {/* メインコンテンツ */}
+      <div className="flex-1 p-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
           {/* 変換元 */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="space-y-6">
@@ -51,6 +61,7 @@ function TimezoneConverterContent() {
                 targetTimezone={state.targetTimezone}
               />
             </div>
+          </div>
           </div>
         </div>
       </div>
